@@ -2,12 +2,17 @@ import { NuevoPresupuesto } from "./NuevoPresupuesto"
 
 
 
-export const Header = () => {
-  return (
-    <header>
-    <h1> Planificador de Gastos </h1>
+export const Header = ({ presupuesto, setPresupuesto }) => {
+    return (
+        <header>
+            <h1> Planificador de Gastos </h1>
 
-    <NuevoPresupuesto />
-    </header>
-  )
+            <NuevoPresupuesto
+                presupuesto={presupuesto}
+                setPresupuesto={setPresupuesto}
+            />
+
+
+        </header>
+    )
 }
