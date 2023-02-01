@@ -29,6 +29,7 @@ function App() {
 
   const guardarGasto = gasto => {
     gasto.id = generarId();
+    gastos.fecha = Date.now();
     setGastos([...gastos, gasto])
 
     setAnimarModal(false)
