@@ -85,8 +85,8 @@ export const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) =
 
                     <select
                         id="categoria"
-                        value={cantidad}
-                        onChange={e => setCategoria(Number(e.target.value))}
+                        value={categoria}
+                        onChange={e => setCategoria(e.target.value)}
                     >
                         <option value="">--  Seleccione --</option>
                         <option value="ahorro">Ahorro</option>
