@@ -1,7 +1,22 @@
+import { useState } from 'react'
+
 import CerrarBtn from '../img/cerrar.svg'
 
 
+
 export const Modal = ({ setModal, animarModal, setAnimarModal }) => {
+
+    const [nombre, setNombre] = useState('')
+    const [cantidad, setCantidad] = useState('')
+    const [categoria, setCategoria] = useState('')
+
+
+
+
+
+
+
+
 
     const ocultarModal = () => {
         setModal(false)
@@ -34,6 +49,8 @@ export const Modal = ({ setModal, animarModal, setAnimarModal }) => {
                         id="nombre"
                         type="text"
                         placeholder="Añade el Nombre del Gasto"
+                        value={nombre}
+                        onChange={e => setNombre(e.target.value)}
                     />
                 </div>
 
@@ -44,6 +61,8 @@ export const Modal = ({ setModal, animarModal, setAnimarModal }) => {
                         id="cantidad"
                         type="number"
                         placeholder="Añade La cantidad del Gasto: ej. 300"
+                        value={cantidad}
+                        onChange={e => setCantidad(Number(e.target.value))}
                     />
                 </div>
 
@@ -51,23 +70,25 @@ export const Modal = ({ setModal, animarModal, setAnimarModal }) => {
                     <label htmlFor="categoria"> Categoria </label>
 
                     <select
-                    id="categoria"
-                    >   
-                     <option value="">--  Seleccione --</option>
-                     <option value="ahorro">Ahorro</option>
-                     <option value="comida">Comida</option>
-                     <option value="casa">Casa</option>
-                     <option value="gastos">Gastos Varios</option>
-                     <option value="ocio">Ocio</option>
-                     <option value="salud">Salud</option>
-                     <option value="suscripciones">Suscripciones</option>
-                    
+                        id="categoria"
+                        value={cantidad}
+                        onChange={e => setCategoria(Number(e.target.value))}
+                    >
+                        <option value="">--  Seleccione --</option>
+                        <option value="ahorro">Ahorro</option>
+                        <option value="comida">Comida</option>
+                        <option value="casa">Casa</option>
+                        <option value="gastos">Gastos Varios</option>
+                        <option value="ocio">Ocio</option>
+                        <option value="salud">Salud</option>
+                        <option value="suscripciones">Suscripciones</option>
+
                     </select>
                 </div>
 
                 <input
-                type="submit"
-                value="Añadir Gasto"
+                    type="submit"
+                    value="Añadir Gasto"
                 />
 
             </form>
