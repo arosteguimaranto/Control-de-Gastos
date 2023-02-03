@@ -10,7 +10,7 @@ import iconoNuevoGasto from './img/nuevo-gasto.svg'
 
 
 function App() {
-  const [presupuesto, setPresupuesto] = useState();
+  const [presupuesto, setPresupuesto] = useState('');
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false)
 
   const [modal, setModal] = useState(false)
