@@ -35,20 +35,28 @@ const diccionarioIconos = {
 export const Gasto = ({gasto}) => {
     const { categoria, nombre, cantidad, id, fecha} = gasto;
 
-    const leadingActions=() =>{
-        console.log('Editar...')
-    }
+    const leadingActions=() =>(
+        <leadingActions>
+        <SwipeAction onClick={() => console.log('editar...')}>
+            Editar
+        </SwipeAction>
+        </leadingActions>
+    )
 
-    const trailingActions=() =>{
-        console.log('Eliminar...')
-    }
+    const trailingActions=() =>(
+       <trailingActions>
+       <SwipeAction  onClick={() => console.log('eliminar...')}>
+       Eliminar
+       </SwipeAction>
+       </trailingActions>
+    )
 
     return (
         <SwipeableList>
         <SwipeableListItem
 
-        leadingActions={leadingActions}
-        trailingActions={trailingActions}
+        leadingActions={leadingActions()}
+        trailingActions={trailingActions()}
         >
         <div className="gasto sombra">
             <div className="contenido-gasto">
