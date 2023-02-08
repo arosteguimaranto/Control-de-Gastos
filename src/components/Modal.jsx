@@ -48,7 +48,7 @@ export const Modal = ({
             return;
         }
 
-        guardarGasto({ nombre, cantidad, categoria })
+        guardarGasto({ nombre, cantidad, categoria, fecha: Date.now() })
 
 
     }
