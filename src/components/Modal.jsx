@@ -9,14 +9,15 @@ export const Modal = ({
     animarModal,
     setAnimarModal,
     guardarGasto,
-    gastoEditar
+    gastoEditar,
+    setGastoEditar
 }) => {
 
     const [mensaje, setMensaje] = useState('')
     const [nombre, setNombre] = useState('')
     const [cantidad, setCantidad] = useState('')
     const [categoria, setCategoria] = useState('')
-    const [id, setId] = useState ('')
+    const [id, setId] = useState('')
     const [fecha, setFecha] = useState('')
 
     useEffect(() => {
@@ -28,11 +29,12 @@ export const Modal = ({
             setFecha(gastoEditar.fecha)
         }
     }, [])
- 
+
 
     const ocultarModal = () => {
         setModal(false)
         setAnimarModal(false)
+        setGastoEditar({})
 
         setTimeout(() => {
             setModal(false)
@@ -70,7 +72,7 @@ export const Modal = ({
             <form
                 onSubmit={handleSubmit}
                 className={`formulario ${animarModal ? "animar" : 'cerrar'}`}>
-                <legend> {gastoEditar.nombre ? 'Editar Gasto' : 'Nuevo Gasto'} 
+                <legend> {gastoEditar.nombre ? 'Editar Gasto' : 'Nuevo Gasto'}
                 </legend>
                 {mensaje && <Mensaje tipo="error">{mensaje}</Mensaje>}
 
