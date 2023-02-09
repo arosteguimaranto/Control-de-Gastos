@@ -19,7 +19,7 @@ export const ControlPresupuesto = ({ gastos, presupuesto }) => {
             (2);
 
 
-       
+
         setDisponible(totalDisponible)
         setGastado(totalGastado)
 
@@ -42,10 +42,11 @@ export const ControlPresupuesto = ({ gastos, presupuesto }) => {
         <div className="contenedor-presupuesto contenedor sombra dos-columnas">
             <div>
                 <CircularProgressbar
-                styles={buildStyles({
-                    pathColor:'#3B82F6',
-                    trailColor:'#F5F5F5'
-                })}
+                    styles={buildStyles({
+                        pathColor: '#3B82F6',
+                        trailColor: '#F5F5F5',
+                        textColor: '#3B82F6'
+                    })}
                     value={porcentaje}
                     text={`${porcentaje}%Gastado`}
                 />
